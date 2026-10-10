@@ -1,0 +1,12 @@
+{
+  "pages": ["pages/index/index"],
+  "window": {
+    "navigationBarTitleText": "上班鼓励器",
+    "navigationBarBackgroundColor": "#1c1713",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#1c1713",
+    "backgroundTextStyle": "light"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

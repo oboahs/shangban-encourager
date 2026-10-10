@@ -16,3 +16,6 @@ npm run dev
 ```sh
 npm run build:pages
 ```
+
+微信小程序在 `miniprogram/`。用微信开发者工具导入这个目录即可预览。正式发布要换成自己的小程序 AppID。
+

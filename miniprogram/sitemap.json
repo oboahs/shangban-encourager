@@ -1,0 +1,4 @@
+{
+  "desc": "上班鼓励器",
+  "rules": [{ "action": "allow", "page": "*" }]
+}

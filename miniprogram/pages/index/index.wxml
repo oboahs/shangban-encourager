@@ -1,0 +1,71 @@
+<view class="desk">
+  <view class="shell" wx:if="{{screen === 'setup'}}">
+    <view class="brand">上班鼓励器</view>
+    <view class="pair">
+      <view class="label">
+        <text>上班</text>
+        <picker mode="time" value="{{start}}" bindchange="onStart">
+          <view class="field">{{start}}</view>
+        </picker>
+      </view>
+      <view class="label">
+        <text>下班</text>
+        <picker mode="time" value="{{end}}" bindchange="onEnd">
+          <view class="field">{{end}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class="label">
+      <text>月薪</text>
+      <view class="salary">
+        <text class="yen">¥</text>
+        <input class="field salary-input" type="digit" value="{{salary}}" bindinput="onSalary" />
+      </view>
+    </view>
+    <view class="chips">
+      <view
+        wx:for="{{presets}}"
+        wx:key="value"
+        class="chip {{salary === item.value ? 'on' : ''}}"
+        data-value="{{item.value}}"
+        bindtap="onPreset"
+      >{{item.label}}</view>
+    </view>
+    <view class="alert" wx:if="{{error}}">{{error}}</view>
+    <button class="btn" bindtap="encourage">获取鼓励</button>
+  </view>
+
+  <view class="shell" wx:elif="{{screen === 'live'}}">
+    <view class="brand brand-live">上班鼓励器</view>
+    <view class="receipt">
+      <view class="earned">今天已赚</view>
+      <view class="money">
+        <text class="yen">¥</text>{{earnedInt}}<text class="frac">.{{earnedFrac}}</text>
+      </view>
+      <view class="until">{{untilText}}</view>
+    </view>
+    <view class="quip">{{quip}}</view>
+    <button class="btn" bindtap="onLeave">我要下班</button>
+    <button class="btn ghost" bindtap="back">返回</button>
+  </view>
+
+  <view class="shell" wx:else>
+    <view class="brand brand-live">上班鼓励器</view>
+    <view class="receipt stamp-wrap">
+      <view class="money">
+        <text class="yen">¥</text>{{resultInt}}<text class="frac">.{{resultFrac}}</text>
+      </view>
+      <view class="stamp">{{stamp}}</view>
+    </view>
+    <button class="btn" bindtap="watchAgain">继续看</button>
+    <button class="btn ghost" bindtap="back">返回</button>
+  </view>
+
+  <view class="scrim" wx:if="{{ask}}" bindtap="stay">
+    <view class="dialog" catchtap="noop">
+      <view class="ask">{{askTitle}}</view>
+      <button class="btn ink" bindtap="stay">{{askStay}}</button>
+      <button class="btn ghost dark" bindtap="confirmLeave">确定</button>
+    </view>
+  </view>
+</view>

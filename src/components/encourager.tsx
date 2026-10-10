@@ -1,6 +1,6 @@
 import "@fontsource/zcool-kuaile/chinese-simplified-400.css";
 import "@fontsource/zcool-kuaile/latin-400.css";
-import { ChevronLeft, MoreHorizontal, X } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 import { memo, useEffect, useLayoutEffect, useRef, useState, type RefObject } from "react";
 import {
   formatYuan,
@@ -163,21 +163,12 @@ function CountUp({ value }: { value: number }) {
 }
 
 function Bar({ onBack }: { onBack?: () => void }) {
+  if (!onBack) return null;
   return (
     <header className="nav">
-      {onBack ? (
-        <button type="button" className="icon-btn press" onClick={onBack} aria-label="返回">
-          <ChevronLeft aria-hidden="true" />
-        </button>
-      ) : (
-        <span className="icon-btn" aria-hidden="true" />
-      )}
-      <div />
-      <div className="capsule" aria-hidden="true">
-        <MoreHorizontal size={16} />
-        <span />
-        <X size={14} />
-      </div>
+      <button type="button" className="icon-btn press" onClick={onBack} aria-label="返回">
+        <ChevronLeft aria-hidden="true" />
+      </button>
     </header>
   );
 }

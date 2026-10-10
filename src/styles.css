@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./title-font.css";
 
 @theme {
   --color-desk: #1c1713;
@@ -60,10 +61,11 @@
 .brand {
   margin: 1.75rem 0 0.25rem;
   text-align: center;
-  font-family: var(--font-display);
+  font-family: "ShangbanTitle", var(--font-sans);
   font-size: clamp(2.6rem, 12vw, 3.4rem);
+  font-weight: 700;
   line-height: 1.15;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
 }
 
 .brand-live {
@@ -211,6 +213,9 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 2.75rem;
   padding: 0 0.85rem;
   border-radius: 999px;
@@ -218,6 +223,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   background: transparent;
   color: var(--color-fg);
   font-size: 0.85rem;
+  line-height: 1.2;
+  text-align: center;
 }
 
 .chip[aria-pressed="true"] {
@@ -253,8 +260,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   min-height: 3.25rem;
   padding: 0 1rem;
   border-radius: 999px;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
   letter-spacing: 0.04em;
 }
 

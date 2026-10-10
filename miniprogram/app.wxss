@@ -1,3 +1,5 @@
+@import "assets/title-font.wxss";
+
 page {
   background: #1c1713;
   color: #f6f1e6;

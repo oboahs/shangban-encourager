@@ -11,9 +11,11 @@
 .brand {
   margin: 56rpx 0 48rpx;
   text-align: center;
+  font-family: "ShangbanTitle", "PingFang SC", sans-serif;
   font-size: 84rpx;
+  font-weight: 700;
   line-height: 1.15;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
 }
 
 .brand-live {
@@ -78,11 +80,16 @@
 }
 
 .chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 12rpx 22rpx;
   border-radius: 999rpx;
   border: 1px solid #43382e;
   color: #c4b5a2;
   font-size: 26rpx;
+  line-height: 1.2;
+  text-align: center;
 }
 
 .chip.on {
@@ -99,9 +106,15 @@
 }
 
 .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 0 20rpx;
+  padding: 0 32rpx;
   height: 96rpx;
-  line-height: 96rpx;
+  line-height: 1.2;
+  box-sizing: border-box;
+  text-align: center;
   border-radius: 999rpx;
   background: #d3271c;
   color: #fff8f4;
